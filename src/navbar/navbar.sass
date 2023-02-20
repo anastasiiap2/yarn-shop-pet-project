@@ -1,0 +1,75 @@
+$font-stack: 'Georgia', Helvetica
+$primary-color: #fafafa
+$secondary-color: #32363e
+$breakpoint: 1040px
+
+html, body
+  margin: 0
+  width: 100%
+  font-family: $font-stack
+  box-sizing: border-box
+
+
+
+.navbar-container
+  display: flex
+  //outline: solid 1px #282c34
+  background-color: $secondary-color
+
+
+.flex-item
+  //outline: solid 1px #282c34
+  height: 12vh
+
+#logo
+  flex: 0.4
+
+#logo-img
+  width: auto
+  height: 15vh
+  position: relative
+  top: 10px
+  left: 10px
+
+.search-bar
+  flex: 1
+  padding-right: 50px
+
+
+
+
+.nav-menu
+  flex: 2
+  display: flex
+
+.nav-items
+  text-align: center
+  display: flex
+  align-items: center
+  font-size: 1.75rem
+  font-weight: 600
+
+
+.nav-links
+  display: flex
+  flex: 1
+  justify-content: center
+  text-decoration: none
+  color: $primary-color
+
+
+
+
+
+@media (max-height: 500px)
+  .navbar-container
+    height: 60px
+
+  #logo-img
+    height: 75px
+
+
+
+
+
+
