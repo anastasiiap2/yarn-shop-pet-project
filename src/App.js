@@ -1,7 +1,9 @@
 import './App.css';
 import Navbar from "./navbar/Navbar.js";
+
 function App() {
-  return <Navbar />
+  return <><Navbar />
+    </>
 }
 
 export default App;
