@@ -1,4 +1,4 @@
-import logo from "../assets/images/knitting_main_icon.png";
+import logo from "../assets/images/2023_03_01_0ry_Kleki.png";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars} from "@fortawesome/free-solid-svg-icons";
 import {useState} from "react";
@@ -12,30 +12,29 @@ export default function Navbar() {
     }
 
     return <>
-        <nav className="nav-menu">
-            <div className="navbar-container">
-                <a href="/">
-                    <img src={logo} alt="Sorry, this picture is unavailable" width="512" height="512" id="logo-img"/>
+        <nav className="navbar-container flex-container">
+            <div className="flex-item">
+                <img src={logo} alt="Sorry, this picture is unavailable" width="512" height="512" id="logo-img"/>
+                <svg width="100" height="100">
+
+                </svg>
+            </div>
+            <button className="dropdown-btn" onClick={toggleClassName}>
+                Menu
+            </button>
+            <div className={isActive ? "visible flex-item nav-list" : "flex-item nav-list"}>
+                <a href="/" className={isActive ? "visible nav-link" : "nav-link"}>
+                    Patterns & Books
                 </a>
-                <div className="dropdown">
-                    <button className="dropdown-btn" onClick={toggleClassName}>
-                        {/*<FontAwesomeIcon icon={faBars} size="lg" className="faBars"/>*/}Menu
-                    </button>
-                    <div className={isActive ? "active" : "hidden"} id="nav-list">
-                        <a href="/" className="nav-links">
-                            Patterns & Books
-                        </a>
-                        <a href="/" className="nav-links">
-                            Shop
-                        </a>
-                        <a href="/" className="nav-links">
-                            About us
-                        </a>
-                        <a href="/" className="nav-links">
-                            Contacts
-                        </a>
-                    </div>
-                </div>
+                <a href="/" className={isActive ? "visible nav-link" : "nav-link"}>
+                    Shop
+                </a>
+                <a href="/" className={isActive ? "visible nav-link" : "nav-link"}>
+                    About us
+                </a>
+                <a href="/" className={isActive ? "visible nav-link" : "nav-link"}>
+                    Contacts
+                </a>
             </div>
         </nav>
     </>

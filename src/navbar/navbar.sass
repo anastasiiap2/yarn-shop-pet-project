@@ -1,5 +1,5 @@
-$font-stack: 'Georgia', Helvetica
-$primary-color: #F3E4E2
+$font-stack: 'Merriweather', 'Roboto Slab', Helvetica
+$primary-color: #fffefd
 $secondary-color: #32363e
 $breakpoint: 1040px
 
@@ -9,79 +9,85 @@ html, body
   font-family: $font-stack
   box-sizing: border-box
 
-.nav-menu
-  width: 100%
-  font-size: 2rem
-  height: 80px
-  background-color: #7B4157
-
-.dropdown
-  border-bottom-left-radius: 8px
-
-.navbar-container
+.flex-container
   display: flex
   justify-content: space-between
+  height: 80px
 
-#nav-list
-  position: absolute
-  right: 0
-  top: 80px
-  width: clamp(110px, 160px, 250px)
-  background: linear-gradient(#7b4157fc, #7b4157c4)
-  font-size: 1.5rem
-  //padding-block: 5px
+.flex-item
   display: flex
-  flex-direction: column
-  text-align: center
-  //box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px
-  border-bottom-left-radius: 8px
-  z-index: 1
-  //transition: all 0.3s ease-in-out
-  transition: all .5s ease-in-out
-  transform-origin: left top
+  justify-content: center
+  font-size: clamp(2vmin, 3vmin, 5vmin)
 
-.nav-links
-  text-decoration: none
-  color: $primary-color
-  //outline: 1px solid red
-  padding: 10px 5px
-  text-shadow: 1px 1px 8px #32363e
-
-.nav-list :not(last-child)
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 1px
-
-.nav-links:last-of-type
-  border-bottom-left-radius: 8px
-
-#logo-img
-  width: 100px
-  height: 100px
-  position: relative
-  top: 5px
-  margin-left: 10px
+.navbar-container
+  min-width: 320px
+  width: 100%
+  font-weight: 600
+  background-color: #70384d
 
 .dropdown-btn
   background-color: transparent
   border: none
-  margin: 15px 30px
-  color: #fffefd
+  color: $primary-color
+  display: none
+  font-size: 1.7rem
 
-.hidden
-  opacity: 0
-  height: 0
+.nav-list
+  background: linear-gradient(#70384d 35%, #7b4157c4)
+  display: grid
+  font-size: 1.5rem
+  grid-template-columns: repeat(4, 1fr)
+  width: 45vw
+  border-bottom-left-radius: 8px
+  z-index: 1
+  //transition: all .5s ease-in-out
+  //transform-origin: left top
 
-.active
+.nav-link
+  display: flex
+  text-decoration: none
+  color: $primary-color
+  justify-content: center
+  align-items: center
+  cursor: pointer
+  text-shadow: 1px 1px 8px #32363e
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px
+
+.nav-link:hover
+  font-size: 1.6rem
+  color: $primary-color
+
+
+#logo-img
+  width: 110px
+  height: 110px
+  position: relative
+  top: 5px
+  margin-left: 10px
+
+
+@media (max-width: 1060px)
+  .nav-list
+    grid-template-columns: 1fr
+    position: absolute
+    top: 80px
+    right: 0
+    z-index: 1
+
+  .nav-link
+    display: none
+    text-align: center
+    line-height: 10vh
+
+  .visible
+    display: block
+
+  .dropdown-btn
+    display: block
+    border: none
+    width: 45vw
 
 
 
 
 
-//.faBars
-//  color: #f6eceb
-
-//#menu-icon
-//  width: 50px
-//  height: 40px
-
-//.dropdown-btn:hover .nav-list
-//  background-color: #32363e
