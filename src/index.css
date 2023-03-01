@@ -1,3 +1,9 @@
+:root{
+  --font-stack: 'Merriweather', 'Roboto Slab', Helvetica;
+  --primary-color: #fffefd;
+  --secondary-color: #32363e;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +16,11 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  font-family: var(--font-stack);
+  box-sizing: border-box;
 }

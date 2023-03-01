@@ -1,11 +1,20 @@
-// import {useState, useEffect} from "react";
-//
-// export default function ItemsList(){
-//
-//         useEffect(() => {
-//             fetch("https://63f3b6edfe3b595e2ee804f5.mockapi.io/items/")
-//                 .then(response => response.json())
-//                 .then(data => console.log(data))
-//         })
-//
-// }
+import {useState, useEffect} from "react";
+
+export default function ItemsList(){
+    const [items, setItems] = useState([]);
+
+        useEffect(() => {
+            fetch("https://fakestoreapi.com/products")
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    setItems(data);
+                })
+                .catch(error => console.log(error))
+        }, [])
+
+    return <>
+        {items.map((item) => <li key={item.index}>{item.title}</li>)} //test -> works. Create Product component analog and render it here
+    </>
+
+}

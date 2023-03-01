@@ -1,16 +1,24 @@
 import "./landing-page.sass";
+import Navbar from "../navbar/Navbar";
+import FirstBoard from "./carousel-items/firstBoard/FirstBoard";
 
-export default function LandingPage(){
+export default function LandingPage() {
     return <>
-        <div className="container">
-            <div className="circle">
-                <div id="background-image" />
-            </div>
-            <div className="text-content">
-                <h2>Tuesday promotion</h2>
-                <p>Best Weekly Deals</p>
-                <button id="button-link">SHOP NOW</button>
-            </div>
+        <div className="grid-container">
+            <header className="grid-item">
+                <Navbar/>
+            </header>
+            <main className="grid-item">
+                <div className="carousel">
+                    <FirstBoard />
+                </div>
+                <div>
+                    Blog
+                </div>
+            </main>
+            <footer className="grid-item">
+
+            </footer>
         </div>
     </>
 }

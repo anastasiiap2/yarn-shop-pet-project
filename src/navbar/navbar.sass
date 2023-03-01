@@ -1,13 +1,12 @@
 $font-stack: 'Merriweather', 'Roboto Slab', Helvetica
 $primary-color: #fffefd
 $secondary-color: #32363e
-$breakpoint: 1040px
-
-html, body
-  margin: 0
-  width: 100%
-  font-family: $font-stack
-  box-sizing: border-box
+//
+//html, body
+//  margin: 0
+//  width: 100%
+//  font-family: $font-stack
+//  box-sizing: border-box
 
 .flex-container
   display: flex
@@ -22,7 +21,7 @@ html, body
 .navbar-container
   min-width: 320px
   width: 100%
-  font-weight: 600
+  font-weight: 500
   background-color: #70384d
 
 .dropdown-btn
@@ -30,10 +29,11 @@ html, body
   border: none
   color: $primary-color
   display: none
-  font-size: 1.7rem
+  font-size: 1.8rem
+  font-family: $font-stack
 
 .nav-list
-  background: linear-gradient(#70384d 35%, #7b4157c4)
+  background-color: #70384d
   display: grid
   font-size: 1.5rem
   grid-template-columns: repeat(4, 1fr)
@@ -51,7 +51,7 @@ html, body
   align-items: center
   cursor: pointer
   text-shadow: 1px 1px 8px #32363e
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px
+  box-shadow: rgba(0, 0, 0, 0.05) 0 1px 2px 0
 
 .nav-link:hover
   font-size: 1.6rem
@@ -73,11 +73,14 @@ html, body
     top: 80px
     right: 0
     z-index: 1
+    font-size: 1.4rem
+    background: linear-gradient(#70384d 35%, #925a6f)
 
   .nav-link
     display: none
     text-align: center
     line-height: 10vh
+    font-weight: normal
 
   .visible
     display: block
@@ -86,7 +89,11 @@ html, body
     display: block
     border: none
     width: 45vw
+    text-align: center
 
+
+  .logo-div
+    width: 45vw
 
 
 

@@ -1,8 +1,8 @@
 import './App.css';
-import Navbar from "./navbar/Navbar.js";
+import LandingPage from "./landing-page/LandingPage";
 
 function App() {
-  return <><Navbar />
+  return <><LandingPage />
     </>
 }
 
