@@ -1,8 +1,8 @@
 import './App.css';
-import LandingPage from "./landing-page/LandingPage";
+import ItemsList from "./shop-page/ItemsList";
 
 function App() {
-  return <><LandingPage />
+  return <><ItemsList />
     </>
 }
 

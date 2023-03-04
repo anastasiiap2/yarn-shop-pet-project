@@ -1,20 +1,35 @@
 import {useState, useEffect} from "react";
+import Item from "./Item";
+import Navbar from "../navbar/Navbar";
+import "./item-list.sass"
 
-export default function ItemsList(){
+export default function ItemsList() {
     const [items, setItems] = useState([]);
 
-        useEffect(() => {
-            fetch("https://fakestoreapi.com/products")
-                .then(response => response.json())
-                .then(data => {
-                    console.log(data);
-                    setItems(data);
-                })
-                .catch(error => console.log(error))
-        }, [])
+    useEffect(() => {
+        fetch("yarn-db.json")
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                setItems(data);
+            })
+            .catch(error => console.log(error))
+    }, [])
 
     return <>
-        {items.map((item) => <li key={item.index}>{item.title}</li>)} //test -> works. Create Product component analog and render it here
+        <Navbar/>
+        <div className="product-layout">
+            <h1>Shop</h1>
+            <div className="items-grid-container">
+                {items.map(item => {
+                        return <div key={item.id} className="item-grid">
+                        <Item
+                            details={item}
+                        />
+                        </div>
+                    })}
+            </div>
+        </div>
     </>
 
 }

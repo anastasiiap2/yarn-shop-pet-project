@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "Anchor Artiste Metallic",
+    "price": 4.99,
+    "image": "https://res.cloudinary.com/dbfn5lnvx/image/upload/q_auto/v1607769454/react-tutorial/products/final/cheese.png",
+    "description": "80% Viscose, 20% Polyester"
+  },
+  {
+    "id": 2,
+    "title": "Anchor Baby Pure Cotton",
+    "price": 3.29,
+    "image": "https://www.woolwarehouse.co.uk/media/catalog/product/cache/1/small_image/150x100/9df78eab33525d08d6e5fb8d27136e95/a/n/an_4804000_00430_0_1.jpg",
+    "description": "100% Cotton"
+  }
+]

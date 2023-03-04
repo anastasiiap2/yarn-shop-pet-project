@@ -12,7 +12,7 @@ export default function LandingPage() {
                 <div className="carousel">
                     <FirstBoard />
                 </div>
-                <div>
+                <div id="test">
                     Blog
                 </div>
             </main>
