@@ -19,7 +19,9 @@ export default function ItemsList() {
     return <>
         <Navbar/>
         <div className="product-layout">
-            <h1>Shop</h1>
+            <h1 id={"shop-header"}>Shop</h1>
+            <p id={"shop-slogan"}>Lorem ipsum dolores</p>
+            <hr/>
             <div className="items-grid-container">
                 {items.map(item => {
                         return <div key={item.id} className="item-grid">

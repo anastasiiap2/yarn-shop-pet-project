@@ -9,9 +9,9 @@ export default function Item(props){
                     <img src={details.image} alt="" width="200" height="200" className={"yarn-image"}/>
                 </div>
                 <div className="info">
-                    <h3>{details.title}</h3>
-                    <p>${details.price}</p>
-                    <p>{details.description}</p>
+                    <h2 className="item-title">{details.title}</h2>
+                    <p id={"description"}>{details.description}</p>
+                    <p id={"price"}>${details.price}</p>
                 </div>
             </div>
         </>
