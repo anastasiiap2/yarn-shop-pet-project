@@ -24,16 +24,16 @@ export default function Navbar() {
             </button>
             <div className={isActive ? "visible flex-item nav-list" : "flex-item nav-list"}>
                 <a href="/" className={isActive ? "visible nav-link" : "nav-link"}>
-                    Patterns & Books
+                    Yarns
                 </a>
                 <a href="/" className={isActive ? "visible nav-link" : "nav-link"}>
-                    Shop
+                    Crochet hooks
                 </a>
                 <a href="/" className={isActive ? "visible nav-link" : "nav-link"}>
-                    About us
+                    Auxiliary tools
                 </a>
                 <a href="/" className={isActive ? "visible nav-link" : "nav-link"}>
-                    Contacts
+                    Knitting needles
                 </a>
             </div>
         </nav>
