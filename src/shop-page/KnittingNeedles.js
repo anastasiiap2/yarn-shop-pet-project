@@ -3,11 +3,11 @@ import Item from "./Item";
 import Navbar from "../navbar/Navbar";
 import "./item-list.sass"
 
-export default function ItemsList() {
+export default function KnittingNeedles() {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        fetch("http://127.0.0.1:3000/items")
+        fetch("http://127.0.0.1:3000/items/knitting-needles")
             .then(response => response.json())
             .then(data => {
                 console.log(data);

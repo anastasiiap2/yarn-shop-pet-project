@@ -1,6 +1,7 @@
 import logo from "../assets/images/2023_03_01_0ry_Kleki.png";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars} from "@fortawesome/free-solid-svg-icons";
+import {Link, BrowserRouter} from "react-router-dom";
 import {useState} from "react";
 import "./navbar.sass";
 
@@ -23,18 +24,18 @@ export default function Navbar() {
                 Menu
             </button>
             <div className={isActive ? "visible flex-item nav-list" : "flex-item nav-list"}>
-                <a href="/" className={isActive ? "visible nav-link" : "nav-link"}>
+                <Link to="/" className={isActive ? "visible nav-link" : "nav-link"}>
                     Yarns
-                </a>
-                <a href="/" className={isActive ? "visible nav-link" : "nav-link"}>
+                </Link>
+                <Link to="/crochet-hooks" className={isActive ? "visible nav-link" : "nav-link"}>
                     Crochet hooks
-                </a>
-                <a href="/" className={isActive ? "visible nav-link" : "nav-link"}>
+                </Link>
+                <Link to="/" className={isActive ? "visible nav-link" : "nav-link"}>
                     Auxiliary tools
-                </a>
-                <a href="/" className={isActive ? "visible nav-link" : "nav-link"}>
+                </Link>
+                <Link to="/knitting-needles" className={isActive ? "visible nav-link" : "nav-link"}>
                     Knitting needles
-                </a>
+                </Link>
             </div>
         </nav>
     </>
