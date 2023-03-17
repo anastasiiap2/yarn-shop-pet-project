@@ -30,7 +30,7 @@ export default function Navbar() {
                 <Link to="/crochet-hooks" className={isActive ? "visible nav-link" : "nav-link"}>
                     Crochet hooks
                 </Link>
-                <Link to="/" className={isActive ? "visible nav-link" : "nav-link"}>
+                <Link to="/auxiliary-tools" className={isActive ? "visible nav-link" : "nav-link"}>
                     Auxiliary tools
                 </Link>
                 <Link to="/knitting-needles" className={isActive ? "visible nav-link" : "nav-link"}>

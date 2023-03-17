@@ -3,6 +3,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import KnittingNeedles from "./shop-page/KnittingNeedles";
 import CrochetHooks from "./shop-page/CrochetHooks"
 import LandingPage from "./landing-page/LandingPage";
+import AuxiliaryTools from "./shop-page/AuxiliaryTools";
 
 function App() {
   return <><BrowserRouter>
@@ -10,6 +11,7 @@ function App() {
       <Route path="/" element={<LandingPage />}/>
       <Route path="/knitting-needles" element={<KnittingNeedles />} />
       <Route path="/crochet-hooks" element={<CrochetHooks />} />
+      <Route path="/auxiliary-tools" element={<AuxiliaryTools />}/>
     </Routes>
   </BrowserRouter>
     </>
