@@ -37,20 +37,20 @@ $secondary-color: #32363e
   //transition: all .5s ease-in-out
   //transform-origin: left top
 
+
 .nav-link
   display: flex
   text-decoration: none
   color: $primary-color
+  text-align: center
   justify-content: center
   align-items: center
   cursor: pointer
   text-shadow: 1px 1px 8px #32363e
-  box-shadow: rgba(0, 0, 0, 0.05) 0 1px 2px 0
+  box-shadow: rgba(0, 0, 0, 0.35) 0 1px 2px 0
 
 .nav-link:hover
   font-size: 1.6rem
-  color: $primary-color
-
 
 #logo-img
   width: 110px
@@ -59,6 +59,27 @@ $secondary-color: #32363e
   top: 5px
   margin-left: 10px
 
+.yarn-dropdown
+  display: none
+  position: absolute
+  top: 80px
+  width: 11.25vw
+  border-bottom-left-radius: 8px
+  background: linear-gradient(#70384d 35%, #925a6f)
+
+
+.yarn-btn
+  position: relative
+
+.yarn-btn:hover .yarn-dropdown
+  display: block
+
+.yarn-dropdown .nav-link
+  font-size: 1.2rem
+  line-height: 10vh
+
+.yarn-dropdown .nav-link:hover
+  font-size: 1.3rem
 
 @media (max-width: 1060px)
   .nav-list
@@ -85,10 +106,15 @@ $secondary-color: #32363e
     width: 45vw
     text-align: center
 
-
   .logo-div
     width: 45vw
 
+  .yarn-dropdown
+    right: 45vw
 
+  .nav-link
+    font-size: 1rem
 
+  .nav-link:hover
+    font-size: 1.1rem
 

@@ -1,7 +1,5 @@
-import logo from "../assets/images/2023_03_01_0ry_Kleki.png";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faBars} from "@fortawesome/free-solid-svg-icons";
-import {Link, BrowserRouter} from "react-router-dom";
+import logo from "../../assets/images/logo_main.png";
+import {Link} from "react-router-dom";
 import {useState} from "react";
 import "./navbar.sass";
 
@@ -15,7 +13,7 @@ export default function Navbar() {
     return <>
         <nav className="navbar-container flex-container">
             <div className="flex-item logo-div">
-                <img src={logo} alt="Sorry, this picture is unavailable" width="512" height="512" id="logo-img"/>
+                <a href="/"><img src={logo} alt="Sorry, this picture is unavailable" width="512" height="512" id="logo-img"/></a>
                 <svg width="100" height="100">
 
                 </svg>
@@ -24,9 +22,6 @@ export default function Navbar() {
                 Menu
             </button>
             <div className={isActive ? "visible flex-item nav-list" : "flex-item nav-list"}>
-                <Link to="/" className={isActive ? "visible nav-link" : "nav-link"}>
-                    Yarns
-                </Link>
                 <Link to="/crochet-hooks" className={isActive ? "visible nav-link" : "nav-link"}>
                     Crochet hooks
                 </Link>
@@ -36,6 +31,16 @@ export default function Navbar() {
                 <Link to="/knitting-needles" className={isActive ? "visible nav-link" : "nav-link"}>
                     Knitting needles
                 </Link>
+                <div to="/" className={isActive ? "visible nav-link yarn-btn" : "nav-link yarn-btn"}>
+                    <span>Yarns</span>
+                    <div className="yarn-dropdown">
+                        <Link to="/yarn/acrylic-yarn" className="nav-link">Acrylic yarn</Link>
+                        <Link to="/yarn/mohair-yarn" className="nav-link">Mohair yarn</Link>
+                        <Link to="/yarn/cotton-yarn" className="nav-link">Cotton yarn</Link>
+                        <Link to="/yarn/polyester-yarn" className="nav-link">Polyester yarn</Link>
+                        <Link to="/yarn/alpaca-yarn" className="nav-link">Alpaca yarn</Link>
+                    </div>
+                </div>
             </div>
         </nav>
     </>

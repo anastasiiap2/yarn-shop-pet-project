@@ -1,5 +1,5 @@
 import "./landing-page.sass";
-import Navbar from "../navbar/Navbar";
+import Navbar from "../components/Navbar/Navbar";
 import FirstBoard from "./carousel-items/firstBoard/FirstBoard";
 
 export default function LandingPage() {
