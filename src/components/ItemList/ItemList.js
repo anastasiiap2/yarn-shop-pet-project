@@ -7,7 +7,7 @@ export default function ItemList(props) {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        fetch(props.url)
+        fetch(props.details.url)
             .then(response => response.json())
             .then(data => {
                 console.log(data);
@@ -15,13 +15,13 @@ export default function ItemList(props) {
 
             })
             .catch(error => console.log(error))
-    }, [props.url])
+    }, [props.details.url])
 
     return <>
         <Navbar/>
         <div className="product-layout">
-            <h1 id={"shop-header"}>Shop</h1>
-            <p id={"shop-slogan"}>Lorem ipsum dolores</p>
+            <h1 id={"shop-header"}>{props.details.name}</h1>
+            <p id={"shop-slogan"}>{props.details.description}</p>
             <hr/>
             <div className="items-grid-container">
                 {items.map(item => {
@@ -34,5 +34,4 @@ export default function ItemList(props) {
             </div>
         </div>
     </>
-
 }

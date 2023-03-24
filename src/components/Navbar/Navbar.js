@@ -6,7 +6,7 @@ import "./navbar.sass";
 export default function Navbar() {
     const [isActive, setActive] = useState(false);
 
-    const toggleClassName = () => {
+    const toggleMenuButton = () => {
         setActive(!isActive)
     }
 
@@ -18,7 +18,7 @@ export default function Navbar() {
 
                 </svg>
             </div>
-            <button className="dropdown-btn" onClick={toggleClassName}>
+            <button className="dropdown-btn" onClick={toggleMenuButton}>
                 Menu
             </button>
             <div className={isActive ? "visible flex-item nav-list" : "flex-item nav-list"}>
@@ -32,8 +32,8 @@ export default function Navbar() {
                     Knitting needles
                 </Link>
                 <div to="/" className={isActive ? "visible nav-link yarn-btn" : "nav-link yarn-btn"}>
-                    <span>Yarns</span>
                     <div className="yarn-dropdown">
+                        <span>Yarns</span>
                         <Link to="/yarn/acrylic-yarn" className="nav-link">Acrylic yarn</Link>
                         <Link to="/yarn/mohair-yarn" className="nav-link">Mohair yarn</Link>
                         <Link to="/yarn/cotton-yarn" className="nav-link">Cotton yarn</Link>
