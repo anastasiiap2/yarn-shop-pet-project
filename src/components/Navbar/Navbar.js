@@ -31,9 +31,9 @@ export default function Navbar() {
                 <Link to="/knitting-needles" className={isActive ? "visible nav-link" : "nav-link"}>
                     Knitting needles
                 </Link>
-                <div to="/" className={isActive ? "visible nav-link yarn-btn" : "nav-link yarn-btn"}>
+                <div className={isActive ? "visible nav-link yarn-btn" : "nav-link yarn-btn"}>
+                    <span>Yarns</span>
                     <div className="yarn-dropdown">
-                        <span>Yarns</span>
                         <Link to="/yarn/acrylic-yarn" className="nav-link">Acrylic yarn</Link>
                         <Link to="/yarn/mohair-yarn" className="nav-link">Mohair yarn</Link>
                         <Link to="/yarn/cotton-yarn" className="nav-link">Cotton yarn</Link>

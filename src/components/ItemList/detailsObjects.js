@@ -75,7 +75,7 @@ export const wool = {
 
 export const knittingNeedles = {
     "name": "Knitting Needles",
-    "url": "http://127.0.0.1:3000/items/knitting-tools",
+    "url": "http://127.0.0.1:3000/items/knitting-needles",
     "description": "Knitting needles - it's not just a tool. This is the basis of every piece of work." +
         " The comfort of knitting depends on them. In our offer, we give you a wide selection of excellent" +
         " and popular knitting needles in many sizes. You will find straight and circular needles here." +
