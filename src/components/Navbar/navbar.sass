@@ -1,6 +1,6 @@
 $font-stack: 'Merriweather', 'Roboto Slab', Helvetica
 $primary-color: #fffefd
-$secondary-color: #32363e
+$secondary-color: #70384d
 
 .flex-container
   display: flex
@@ -16,7 +16,7 @@ $secondary-color: #32363e
   min-width: 320px
   width: 100%
   font-weight: 500
-  background-color: #70384d
+  background-color: $secondary-color
 
 .dropdown-btn
   background-color: transparent
@@ -27,7 +27,7 @@ $secondary-color: #32363e
   font-family: $font-stack
 
 .nav-list
-  background-color: #70384d
+  background-color: $secondary-color
   display: grid
   font-size: 1.5rem
   grid-template-columns: repeat(4, 1fr)
@@ -64,7 +64,7 @@ $secondary-color: #32363e
   top: 80px
   width: 11.25vw
   border-bottom-left-radius: 8px
-  background: linear-gradient(#70384d 35%, #925a6f)
+  background: linear-gradient($secondary-color 35%, #925a6f)
 
 
 .yarn-btn
@@ -92,7 +92,7 @@ $secondary-color: #32363e
     right: 0
     z-index: 1
     font-size: 1.4rem
-    background: linear-gradient(#70384d 35%, #925a6f)
+    background: linear-gradient($secondary-color 35%, #925a6f)
 
   .nav-link
     display: none
