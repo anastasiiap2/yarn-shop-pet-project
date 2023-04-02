@@ -2,6 +2,14 @@ $font-stack: 'Merriweather', 'Roboto Slab', Helvetica
 $primary-color: #fffefd
 $secondary-color: #70384d
 
+
+@mixin dropdown
+  border: none
+  color: $primary-color
+  text-align: center
+  font-family: $font-stack
+  background-color: transparent
+
 .flex-container
   display: flex
   justify-content: space-between
@@ -18,27 +26,30 @@ $secondary-color: #70384d
   font-weight: 500
   background-color: $secondary-color
 
-.dropdown-btn
-  background-color: transparent
-  border: none
-  color: $primary-color
-  display: none
+.menu-btn
+  @include dropdown
+  width: 45vw
   font-size: 1.8rem
-  font-family: $font-stack
+  display: none
+
+.yarn-btn
+  @include dropdown
+  width: 100%
+  height: 100%
 
 .nav-list
   background-color: $secondary-color
   display: grid
-  font-size: 1.5rem
   grid-template-columns: repeat(4, 1fr)
   width: 45vw
-  border-bottom-left-radius: 8px
+  //border-bottom-left-radius: 8px
   z-index: 1
   //transition: all .5s ease-in-out
   //transform-origin: left top
 
 .nav-link
   display: flex
+  font-size: 1.5rem
   text-decoration: none
   color: $primary-color
   text-align: center
@@ -67,10 +78,10 @@ $secondary-color: #70384d
   background: linear-gradient($secondary-color 35%, #925a6f)
 
 
-.yarn-btn
+.yarn-div
   position: relative
 
-.yarn-btn:hover .yarn-dropdown
+.yarn-div:hover .yarn-dropdown
   display: block
 
 .yarn-dropdown .nav-link
@@ -80,8 +91,10 @@ $secondary-color: #70384d
 .yarn-dropdown .nav-link:hover
   font-size: 1.3rem
 
+
+
 .yarn-dropdown > :last-child
-  border-bottom-left-radius: 8px
+  //border-bottom-left-radius: 8px
 
 
 @media (max-width: 1060px)
@@ -103,17 +116,19 @@ $secondary-color: #70384d
   .visible
     display: block
 
-  .dropdown-btn
+  .menu-btn
     display: block
-    border: none
-    width: 45vw
-    text-align: center
 
   .logo-div
     width: 45vw
 
-  .yarn-dropdown
+  .shown
+    display: block
     right: 45vw
+    background-color: #61dafb
+
+  .yarn-link
+    display: block
 
   .nav-link
     font-size: 1rem
@@ -121,7 +136,15 @@ $secondary-color: #70384d
   .nav-link:hover
     font-size: 1.1rem
 
-  .yarn-btn
-    border-bottom-left-radius: 8px
+  .yarn-dropdown
+    top: 0
+    background: linear-gradient(#925a6f 35%, $secondary-color)
+    width: 150px
+    border-top-left-radius: 8px
+    border-bottom-right-radius: 8px
+
+
+
+
 
 
