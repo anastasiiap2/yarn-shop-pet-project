@@ -5,9 +5,13 @@ export default function Item(props) {
 
     return <>
         <div className="item">
-                <img src={details.image} alt="" width="200" height="200" className={"yarn-image"}/>
-                <h2 className="item-title">{details.title}</h2>
+            <img src={details.image} alt="" width="180" height="180" className={"yarn-image"}/>
+            <h2 className="item-title">{details.title}</h2>
+            <div className="item-price-btn">
                 <p id={"price"}>${details.price}</p>
+                <button id="buy-btn">Add</button>
+            </div>
+
         </div>
     </>
 }
