@@ -2,7 +2,9 @@ import './App.css';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import LandingPage from "./landing-page/LandingPage";
 import ItemList from "./components/ItemList/ItemList";
+import Cart from "./components/Cart/Cart";
 import {acrylic, mohair, cotton, silk, wool, merino, polyester, alpaca, knittingNeedles, crochetHooks, auxiliaryTools} from "./components/ItemList/detailsObjects";
+import ItemPage from "./components/ItemPage";
 function App() {
   return <><BrowserRouter>
     <Routes>
@@ -15,6 +17,8 @@ function App() {
       <Route path="/yarn/cotton-yarn" element={<ItemList details={cotton}/>}/>
       <Route path="/yarn/polyester-yarn" element={<ItemList details={polyester}/>}/>
       <Route path="/yarn/alpaca-yarn" element={<ItemList details={alpaca}/>}/>
+      <Route path="/cart" element={<Cart />}/>
+      <Route path="/items/:id" element={<ItemPage />}/>
     </Routes>
   </BrowserRouter>
     </>

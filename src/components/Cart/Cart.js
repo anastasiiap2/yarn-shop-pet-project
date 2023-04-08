@@ -1,8 +1,22 @@
-import cartBasket from "../../assets/images/cart-basket.svg"
-import "./cart.sass";
-
+import Navbar from "../Navbar/Navbar";
+import "./cart.sass"
 export default function Cart(){
+
     return <>
-        <img src={cartBasket} alt="Cart basket icon" height="80" width="80" id="cart-icon"/>
+        <Navbar />
+        {/*<div className="cart-layout-grid">*/}
+            <div id="checkout-items">
+                <div id="checkout-table">
+                    <div className="list-item">
+                        <li>
+                            <div>Pic</div>
+                            <div>Description</div>
+                            <div>Price,delete,amount</div>
+                        </li>
+
+                    </div>
+                </div>
+            </div>
+        {/*</div>*/}
     </>
 }

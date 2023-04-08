@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react";
 import Item from "../Item/Item";
 import Navbar from "../Navbar/Navbar";
-import Cart from "../Cart/Cart";
+import CartMini from "../Cart/CartMini";
 import "./item-list.sass"
 
 export default function ItemList(props) {
@@ -21,7 +21,7 @@ export default function ItemList(props) {
     return <>
         <Navbar/>
         <div className="product-layout">
-            <Cart/>
+            <CartMini/>
             <h1 id={"category-header"}>{props.details.name}</h1>
             <p id={"category-description"}>{props.details.description}</p>
             <hr/>

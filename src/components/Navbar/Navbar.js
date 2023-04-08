@@ -19,7 +19,7 @@ export default function Navbar() {
     return <>
         <nav className="navbar-container flex-container">
             <div className="flex-item logo-div">
-                <a href="/"><img src={logo} alt="Sorry, this picture is unavailable" width="512" height="512" id="logo-img"/></a>
+                <a href="/"><img src={logo} alt="Logo icon" width="512" height="512" id="logo-img"/></a>
                 <svg width="100" height="100">
 
                 </svg>
