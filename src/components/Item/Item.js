@@ -6,13 +6,13 @@ export default function Item(props) {
     const {details} = props;
 
     return <>
-        <Link to={`/items/${details.id}`}>
+        <Link to={`/items/${details.id}`} id="link">
         <div className="item">
             <img src={details.image} alt="" width="180" height="180" className={"yarn-image"}/>
             <h2 className="item-title">{details.title}</h2>
             <div className="item-price-btn">
                 <p id={"price"}>${details.price}</p>
-                <button id="buy-btn">Add</button>
+                {/*<button id="buy-btn">Add</button>*/}
             </div>
         </div>
         </Link>

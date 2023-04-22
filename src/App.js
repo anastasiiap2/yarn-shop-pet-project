@@ -4,7 +4,7 @@ import LandingPage from "./landing-page/LandingPage";
 import ItemList from "./components/ItemList/ItemList";
 import Cart from "./components/Cart/Cart";
 import {acrylic, mohair, cotton, silk, wool, merino, polyester, alpaca, knittingNeedles, crochetHooks, auxiliaryTools} from "./components/ItemList/detailsObjects";
-import ItemPage from "./components/ItemPage";
+import ItemPage from "./components/ItemPage/ItemPage";
 function App() {
   return <><BrowserRouter>
     <Routes>

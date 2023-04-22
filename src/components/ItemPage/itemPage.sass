@@ -1,0 +1,35 @@
+.item-page-layout
+  outline: 1px solid black
+  height: calc(100vh - 80px)
+  background-color: #e9d9d9
+
+#main-lay
+  display: flex
+  justify-content: center
+
+#main-container
+  width: 85vw
+  display: grid
+  //outline: 1px solid red
+  justify-content: center
+  height: 60vh
+  background-color: #fffefd
+  grid-template-columns: repeat(auto-fill, 50%)
+
+.grid-element
+  //outline: 1px solid black
+  max-width: inherit
+  display: flex
+  align-items: center
+  justify-content: center
+
+.description-container
+  background-color: darkslategray
+  border-top-left-radius: 50px
+  border-top-right-radius: 50px
+  height: 100px
+  width: 100%
+
+@media (max-width: 1060px)
+  #main-container
+    grid-template-columns: 1fr
