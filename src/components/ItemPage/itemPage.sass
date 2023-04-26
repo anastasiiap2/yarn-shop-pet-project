@@ -1,17 +1,17 @@
 .item-page-layout
-  height: calc(100vh - 80px)
   display: flex
   justify-content: center
-  background-color: #fffefd
-
+  background-color: #e9d9d9
+  padding-bottom: 100px
 
 #main-container
   width: 85vw
+  background-color: #fffefd
   display: grid
-  margin-top: 20px
   justify-content: center
   height: 60vh
   grid-template-columns: 40% 60%
+
 
 .item-images-container
   display: flex
@@ -52,6 +52,10 @@
   text-align: center
   font-size: 18px
 
+.input-group
+  //outline: 1px solid red
+  width: 180px
+
 #option:hover
   background-color: #94516a
 
@@ -75,10 +79,20 @@
   padding-left: 15px
   padding-top: 10px
   line-height: 1.7
+  overflow: scroll
 
 #item-price
-  font-size: 1.5rem
-  padding: 50px
+  font-size: 2rem
+  width: 75%
+
+#price-tag
+  position: relative
+  bottom: 30px
+  left: 90px
+
+.price-div
+  float: right
+  margin-right: 60px
 
 #buy-btn
   border: none
@@ -92,12 +106,20 @@
 #buy-btn:hover
   background-color: #94516a
 
-.price-buy
+.quantity-add-item
   display: flex
   align-items: center
   justify-content: space-between
-  //outline: 1px solid red
+  margin-right: 50px
+  margin-top: 50px
 
+.more-items-carousel
+  height: 300px
+  width: 100%
+  border-top-right-radius: 50px
+  border-top-left-radius: 50px
+  background-color: #925a6f
+  margin-top: -100px
 
 @media (max-width: 1060px)
   #main-container
