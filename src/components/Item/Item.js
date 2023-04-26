@@ -12,7 +12,6 @@ export default function Item(props) {
             <h2 className="item-title">{details.title}</h2>
             <div className="item-price-btn">
                 <p id={"price"}>${details.price}</p>
-                {/*<button id="buy-btn">Add</button>*/}
             </div>
         </div>
         </Link>

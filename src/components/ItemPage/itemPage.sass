@@ -1,34 +1,103 @@
 .item-page-layout
-  outline: 1px solid black
   height: calc(100vh - 80px)
-  background-color: #e9d9d9
-
-#main-lay
   display: flex
   justify-content: center
+  background-color: #fffefd
+
 
 #main-container
   width: 85vw
   display: grid
-  //outline: 1px solid red
+  margin-top: 20px
   justify-content: center
   height: 60vh
-  background-color: #fffefd
-  grid-template-columns: repeat(auto-fill, 50%)
+  grid-template-columns: 40% 60%
 
-.grid-element
-  //outline: 1px solid black
-  max-width: inherit
+.item-images-container
+  display: flex
+  justify-content: center
+  align-items: center
+
+.list-group
+  position: absolute
+  bottom: 20px
+
+.display-6
+  margin-top: 20px
+
+.image-list
+  list-style-type: none
+  display: flex
+  gap: 10px
+
+.list-image-item
+  cursor: pointer
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px
+  border-radius: 5px
+
+.list-image-item:hover
+  box-shadow: rgb(38, 57, 77) 0 20px 30px -10px
+
+#option-list-item
+  list-style-type: none
+
+#option
+  width: 60px
+  height: 60px
+  background-color: #70384d
+  border-radius: 5px
+  padding: 7px
+  color: #f0efea
+  display: block
+  text-align: center
+  font-size: 18px
+
+#option:hover
+  background-color: #94516a
+
+#input-radio:checked+span
+  outline: 2px solid orange
+
+#option:hover
+  cursor: pointer
+
+#input-radio
+  position: relative
+  top: 30px
+  opacity: 0
+
+.list-items
+  display: grid
+  grid-template-columns: repeat(auto-fill, 70px)
+
+#item-description
+  white-space: pre
+  padding-left: 15px
+  padding-top: 10px
+  line-height: 1.7
+
+#item-price
+  font-size: 1.5rem
+  padding: 50px
+
+#buy-btn
+  border: none
+  background-color: #70384d
+  color: #fffefd
+  border-radius: 6px
+  font-size: 1.2rem
+  font-weight: 600
+  padding: 10px 25px
+
+#buy-btn:hover
+  background-color: #94516a
+
+.price-buy
   display: flex
   align-items: center
-  justify-content: center
+  justify-content: space-between
+  //outline: 1px solid red
 
-.description-container
-  background-color: darkslategray
-  border-top-left-radius: 50px
-  border-top-right-radius: 50px
-  height: 100px
-  width: 100%
 
 @media (max-width: 1060px)
   #main-container
