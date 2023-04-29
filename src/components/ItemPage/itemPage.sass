@@ -10,13 +10,25 @@
   display: grid
   justify-content: center
   height: 60vh
-  grid-template-columns: 40% 60%
+  grid-template-columns: repeat(2, 1fr)
+  grid-template-rows: repeat(2, 1fr)
 
 
 .item-images-container
   display: flex
   justify-content: center
   align-items: center
+  grid-row: 1 / 3
+  grid-column: 1 / 2
+
+.grid-element1
+  grid-row: 1 / 2
+  grid-column: 2 / 3
+
+.grid-element2
+  grid-row: 2 / 3
+  grid-column: 2 / 3
+
 
 .list-group
   position: absolute
@@ -119,8 +131,19 @@
   border-top-right-radius: 50px
   border-top-left-radius: 50px
   background-color: #925a6f
-  margin-top: -100px
+  //margin-top: -100px
 
 @media (max-width: 1060px)
+
   #main-container
     grid-template-columns: 1fr
+    grid-template-rows: repeat(3, 1fr)
+
+  .item-images-container
+    grid-row: 2 / 3
+
+  .grid-element1
+    grid-row: 1 / 2
+
+  .grid-element2
+    grid-row: 3 / 4

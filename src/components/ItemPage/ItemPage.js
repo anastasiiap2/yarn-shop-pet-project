@@ -30,7 +30,7 @@ export default function ItemPage() {
                 setImageSource(data.image0)
                 setPurchase({...purchase, name: data.title})
             })
-    }, [])
+    }, [params.id, purchase])
 
     useEffect(() => {
         fetch("http://127.0.0.1:3000/cart", {
@@ -79,13 +79,15 @@ export default function ItemPage() {
                         </ul>
                     </div>
                 </div>
-                <div className="item-description-container">
+                <div className="grid-element1">
                     <h1 className="display-6">{item.title}</h1>
                     <div className="price-div">
                         <p id="item-price">{item.price}zł</p>
                         <img src={priceTag} alt="" width="30" height="30" id="price-tag"/>
                     </div>
                     <p id="item-description">{item.description}</p>
+                    </div>
+            <div className="grid-element2">
                     <form action="" onSubmit={handleAddItem}>
                         <div className="list-items">
                             {item.options && item.options.map((size, index) => {
