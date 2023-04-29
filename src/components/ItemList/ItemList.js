@@ -7,8 +7,10 @@ import "./item-list.sass"
 export default function ItemList(props) {
     const [items, setItems] = useState([]);
 
+    const url = "http://127.0.0.1:3000/items/";
+
     useEffect(() => {
-        fetch(props.details.url)
+        fetch(url + props.details.listName)
             .then(response => response.json())
             .then(data => {
                 console.log(data);
@@ -16,7 +18,7 @@ export default function ItemList(props) {
 
             })
             .catch(error => console.log(error))
-    }, [props.details.url])
+    }, [props.details.listName])
 
     return <>
         <Navbar/>

@@ -1,6 +1,6 @@
 export const acrylic = {
     "name": "Acrylic Yarn",
-    "url": "http://127.0.0.1:3000/items/acrylic-yarn",
+    "listName": "acrylic",
     "description": "Can acrylic yarns be of good quality? Yes, especially as mixes." +
         " Acrylic has several good properties, so sometimes it makes sense to add it to other fibers." +
         " Cotton gains softness, wool smoothness, and bamboo becomes less flexible." +
@@ -9,7 +9,7 @@ export const acrylic = {
 
 export const mohair = {
     "name": "Mohair Yarns",
-    "url": "http://127.0.0.1:3000/items/mohair-yarn",
+    "listName": "mohair",
     "description": "How to get a light and thin knit, which warms like a thick sweater?" +
         " One word - mohair. At our shop, we offer a mix of this warm fiber with luxurious and smooth silk." +
         " We have it for you in over 40 beautiful colors , and since it likes to combine with others," +
@@ -18,7 +18,7 @@ export const mohair = {
 
 export const cotton = {
     "name": "Cotton",
-    "url": "http://127.0.0.1:3000/items/cotton-yarn",
+    "listName": "cotton",
     "description": "Cotton yarn is the number one choice for spring and summer - no wonder." +
         " This yarn is natural, cheap and so colorful. This is the largest palette of colors you can find." +
         " Check it yourself! And how many uses! From clothes, through toys, to home decorations." +
@@ -28,7 +28,7 @@ export const cotton = {
 
 export const polyester = {
     "name": "Polyester Yarns",
-    "url": "http://127.0.0.1:3000/items/polyester-yarn",
+    "listName": "polyester",
     "description": "It's a waste of work to knit with poor yarns." +
         " However, there is something that cannot be denied - durability. " +
         "It protects the colors against washing out and strengthens the less durable fibres. " +
@@ -37,7 +37,7 @@ export const polyester = {
 }
 export const alpaca = {
     "name": "Alpaca Yarns",
-    "url": "http://127.0.0.1:3000/items/alpaca-yarn",
+    "listName": "alpaca",
     "description": "What do you do when sheep's wool is too chewy? You reach for alpaca yarn!" +
         " Alpaca - a wonderfully soft animal. Its wool is less biting and warms wonderfully," +
         " even in smaller thicknesses. Here, it is available for knitting needles from 3 to 9mm and" +
@@ -46,18 +46,16 @@ export const alpaca = {
 }
 export const silk = {
     "name": "Silk Yarns",
-    "url": "http://127.0.0.1:3000/items/silk-yarn",
-    "description": "\n" +
-        "Silk - magic fiber. Its addition in wool is immediately noticeable. It is he who gives... silkiness." +
+    "listName": "silk",
+    "description": "Silk - magic fiber. Its addition in wool is immediately noticeable. It is he who gives... silkiness." +
         " Luxurious and extremely pleasant. We have several blends for you with this luxurious fiber." +
         " With mohair and alpaca."
 }
 
 export const merino = {
     "name": "Merino Yarns",
-    "url": "http://127.0.0.1:3000/items/merino-yarn",
-    "description": "\n" +
-        "Which yarn doesn't itch? When you ask, we say - merino." +
+    "listName": "merino",
+    "description": "Which yarn doesn't itch? When you ask, we say - merino." +
         " Merino wool has a particularly smooth texture and is ideal for delicate skin." +
         " We also like it for its simple form - without hairs and strange twists." +
         " Yes, it's a great yarn for those who want to see the pattern clearly." +
@@ -66,7 +64,7 @@ export const merino = {
 
 export const wool = {
     "name": "Wool Yarns",
-    "url": "http://127.0.0.1:3000/items/wool-yarn",
+    "listName": "wool",
     "description": "Wool means warmth in nature. What type of wool suits your skin?" +
         " We have 100% sheep wool, alpaca wool and merino wool for you. We also offer mohair" +
         " and wonderful blends of these fibers with other yarns. You will find woolen yarns in" +
@@ -75,8 +73,7 @@ export const wool = {
 
 export const knittingNeedles = {
     "name": "Knitting Needles",
-    "url": "http://127.0.0.1:3000/items/knitting-needles",
-    "image": "https://shop.yulihobby.pl/c/357-category_default/druty.jpg",
+    "listName": "knitting-needles",
     "description": "Knitting needles - it's not just a tool. This is the basis of every piece of work." +
         " The comfort of knitting depends on them. In our offer, we give you a wide selection of excellent" +
         " and popular knitting needles in many sizes. You will find straight and circular needles here." +
@@ -85,7 +82,7 @@ export const knittingNeedles = {
 
 export const crochetHooks = {
     "name": "Crochet Hooks",
-    "url": "http://127.0.0.1:3000/items/crochet-hooks",
+    "listName": "crochet-hooks",
     "description": "Need custom crochet? That's why we have such a large selection of crochet hooks for you." +
         " We offer both professional Japanese crochet and cheap - children's sets. And the dot on the i are" +
         " favorite brands that offer very good quality at an affordable price. The popular KnitPro brand in so" +
@@ -94,7 +91,7 @@ export const crochetHooks = {
 
 export const auxiliaryTools = {
     "name": "Auxiliary Tools",
-    "url": "http://127.0.0.1:3000/items/auxiliary-tools",
+    "listName": "auxiliary-tools",
     "description": "All accessories for knitting machines." +
         " Here you will find what is helpful when knitting and crocheting." +
         " We took care of useful markers, row counters and yarn needles." +
