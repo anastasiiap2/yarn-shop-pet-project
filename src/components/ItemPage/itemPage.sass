@@ -9,9 +9,12 @@
   background-color: #fffefd
   display: grid
   justify-content: center
-  height: 60vh
-  grid-template-columns: repeat(2, 1fr)
+  grid-template-columns: 40% 60%
   grid-template-rows: repeat(2, 1fr)
+  height: auto
+
+.grid-element
+  overflow: hidden
 
 
 .item-images-container
@@ -21,14 +24,15 @@
   grid-row: 1 / 3
   grid-column: 1 / 2
 
-.grid-element1
+.item-description-container
   grid-row: 1 / 2
   grid-column: 2 / 3
 
-.grid-element2
+.item-form-container
   grid-row: 2 / 3
   grid-column: 2 / 3
-
+  display: grid
+  grid-template-columns: repeat(auto-fit, 1fr)
 
 .list-group
   position: absolute
@@ -44,11 +48,11 @@
 
 .list-image-item
   cursor: pointer
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px
+  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px
   border-radius: 5px
 
 .list-image-item:hover
-  box-shadow: rgb(38, 57, 77) 0 20px 30px -10px
+  box-shadow: rgba(0, 0, 0, 0.25) 0 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0 0 0 1px inset
 
 #option-list-item
   list-style-type: none
@@ -65,7 +69,6 @@
   font-size: 18px
 
 .input-group
-  //outline: 1px solid red
   width: 180px
 
 #option:hover
@@ -87,11 +90,12 @@
   grid-template-columns: repeat(auto-fill, 70px)
 
 #item-description
-  white-space: pre
+  white-space: pre-wrap
   padding-left: 15px
   padding-top: 10px
   line-height: 1.7
-  overflow: scroll
+  display: block
+
 
 #item-price
   font-size: 2rem
@@ -104,7 +108,7 @@
 
 .price-div
   float: right
-  margin-right: 60px
+  margin-right: 8vw
 
 #buy-btn
   border: none
@@ -125,25 +129,40 @@
   margin-right: 50px
   margin-top: 50px
 
-.more-items-carousel
-  height: 300px
-  width: 100%
-  border-top-right-radius: 50px
-  border-top-left-radius: 50px
-  background-color: #925a6f
-  //margin-top: -100px
-
 @media (max-width: 1060px)
 
   #main-container
     grid-template-columns: 1fr
     grid-template-rows: repeat(3, 1fr)
+    margin-top: 20px
 
   .item-images-container
     grid-row: 2 / 3
+    grid-column: 1
+    margin-top: -100px
 
-  .grid-element1
+  .item-description-container
     grid-row: 1 / 2
+    grid-column: 1
 
-  .grid-element2
+  .item-form-container
     grid-row: 3 / 4
+    grid-column: 1
+    margin-top: -20px
+
+  #item-description
+    padding-left: 0
+
+  .quantity-add-item
+    flex-direction: column
+    width: 90vw
+    gap: 20px
+
+  #buy-btn
+    width: 200px
+    background-color: #925a6f
+    text-shadow: 1px 1px 10px #32363e
+
+  #option
+    background-color: #925a6f
+    text-shadow: 1px 1px 10px #32363e

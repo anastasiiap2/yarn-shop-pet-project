@@ -30,7 +30,7 @@ export default function ItemPage() {
                 setImageSource(data.image0)
                 setPurchase({...purchase, name: data.title})
             })
-    }, [params.id, purchase])
+    }, [])
 
     useEffect(() => {
         fetch("http://127.0.0.1:3000/cart", {
@@ -63,7 +63,7 @@ export default function ItemPage() {
         <Navbar/>
         <div className="item-page-layout">
             <div id="main-container">
-                <div className="item-images-container">
+                <div className="item-images-container grid-element">
                     <div>
                         <img src={imageSource} alt="" width="300" height="300"/>
                         <ul className="image-list">
@@ -79,7 +79,7 @@ export default function ItemPage() {
                         </ul>
                     </div>
                 </div>
-                <div className="grid-element1">
+                <div className="item-description-container grid-element">
                     <h1 className="display-6">{item.title}</h1>
                     <div className="price-div">
                         <p id="item-price">{item.price}zł</p>
@@ -87,13 +87,13 @@ export default function ItemPage() {
                     </div>
                     <p id="item-description">{item.description}</p>
                     </div>
-            <div className="grid-element2">
+            <div className="item-form-container grid-element">
                     <form action="" onSubmit={handleAddItem}>
                         <div className="list-items">
                             {item.options && item.options.map((size, index) => {
                                 return <li key={index} id="option-list-item">
                                     <label aria-label={size}>
-                                        <input type="radio" id="input-radio" name="option" onChange={handleRadioSelect}
+                                        <input type="radio" required id="input-radio" name="option" onChange={handleRadioSelect}
                                                value={size}/>
                                         <span id="option">{size}</span>
                                     </label>
@@ -112,9 +112,6 @@ export default function ItemPage() {
                     </form>
                 </div>
             </div>
-        </div>
-        <div className="more-items-carousel">
-
         </div>
         <CartMini/>
     </>
