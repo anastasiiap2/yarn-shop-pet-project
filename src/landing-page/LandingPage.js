@@ -1,6 +1,7 @@
 import "./landing-page.sass";
 import Navbar from "../components/Navbar/Navbar";
 import FirstBoard from "./carousel-items/firstBoard/FirstBoard";
+import Footer from "../components/Footer/Footer";
 
 export default function LandingPage() {
     return <>
@@ -17,7 +18,7 @@ export default function LandingPage() {
                 </div>
             </main>
             <footer className="grid-item">
-
+                {/*<Footer/>*/}
             </footer>
         </div>
     </>

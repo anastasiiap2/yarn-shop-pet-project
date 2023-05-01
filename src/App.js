@@ -5,6 +5,7 @@ import ItemList from "./components/ItemList/ItemList";
 import Cart from "./components/Cart/Cart";
 import {acrylic, mohair, cotton, silk, wool, merino, polyester, alpaca, knittingNeedles, crochetHooks, auxiliaryTools} from "./components/ItemList/detailsObjects";
 import ItemPage from "./components/ItemPage/ItemPage";
+import Footer from "./components/Footer/Footer";
 function App() {
   return <><BrowserRouter>
     <Routes>
@@ -21,6 +22,7 @@ function App() {
       <Route path="/items/:id" element={<ItemPage />}/>
     </Routes>
   </BrowserRouter>
+    <Footer/>
     </>
 }
 

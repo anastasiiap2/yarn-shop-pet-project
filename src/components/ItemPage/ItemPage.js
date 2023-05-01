@@ -1,13 +1,15 @@
 import Navbar from "../Navbar/Navbar";
 import {useState, useEffect} from "react";
-import {useParams} from "react-router-dom";
+import {useLocation, useParams} from "react-router-dom";
 import priceTag from "../../assets/images/price-tag.svg";
 import "./itemPage.sass";
 import CartMini from "../Cart/CartMini";
 
 export default function ItemPage() {
+    let location = useLocation();
+
     const [item, setItem] = useState({});
-    const [imageSource, setImageSource] = useState('');
+    const [imageSource, setImageSource] = useState(location.state.details.image);
     const [cart, setCart] = useState([]);
     const [purchase, setPurchase] = useState({
         name: '',
@@ -27,7 +29,6 @@ export default function ItemPage() {
             .then(response => response.json())
             .then(data => {
                 setItem(data)
-                setImageSource(data.image0)
                 setPurchase({...purchase, name: data.title})
             })
     }, [])
@@ -67,7 +68,7 @@ export default function ItemPage() {
                     <div>
                         <img src={imageSource} alt="" width="300" height="300"/>
                         <ul className="image-list">
-                            <li className=""><img src={item.image0} alt="" width="70" height="70"
+                            <li className=""><img src={location.state.details.image} alt="" width="70" height="70"
                                                   className="list-image-item"
                                                   onClick={handleImageChange}/></li>
                             <li className=""><img src={item.image1} alt="" width="70" height="70"
@@ -80,9 +81,9 @@ export default function ItemPage() {
                     </div>
                 </div>
                 <div className="item-description-container grid-element">
-                    <h1 className="display-6">{item.title}</h1>
+                    <h1 className="display-6">{location.state.details.title}</h1>
                     <div className="price-div">
-                        <p id="item-price">{item.price}zł</p>
+                        <p id="item-price">{location.state.details.price}zł</p>
                         <img src={priceTag} alt="" width="30" height="30" id="price-tag"/>
                     </div>
                     <p id="item-description">{item.description}</p>
