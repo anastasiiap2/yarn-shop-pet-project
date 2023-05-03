@@ -1,6 +1,5 @@
 import "./item.sass"
 import {Link} from "react-router-dom";
-import {useState, useEffect} from "react";
 
 export default function Item(props) {
     const {details} = props;

@@ -31,11 +31,12 @@ export default function ItemPage() {
                 setItem(data)
                 setPurchase({...purchase, name: data.title})
             })
+        console.log("mount")
     }, [])
 
     useEffect(() => {
         fetch("http://127.0.0.1:3000/cart", {
-            method: "POST",
+            method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },
@@ -44,6 +45,8 @@ export default function ItemPage() {
             .then(response => response.json())
             .then(data => console.log(data))
             .catch(err => console.error(err))
+        console.log("cart mount")
+
     }, [cart])
 
     const handleImageChange = (event) => {
@@ -64,31 +67,31 @@ export default function ItemPage() {
         <Navbar/>
         <div className="item-page-layout">
             <div id="main-container">
-                <div className="item-images-container grid-element">
+                <div className="item-images-container">
                     <div>
                         <img src={imageSource} alt="" width="300" height="300"/>
                         <ul className="image-list">
-                            <li className=""><img src={location.state.details.image} alt="" width="70" height="70"
+                            <li><img src={location.state.details.image} alt="" width="70" height="70"
                                                   className="list-image-item"
                                                   onClick={handleImageChange}/></li>
-                            <li className=""><img src={item.image1} alt="" width="70" height="70"
-                                                  className="list-image-item"
-                                                  onClick={handleImageChange}/></li>
-                            <li className=""><img src={item.image2} alt="" width="70" height="70"
-                                                  className="list-image-item"
-                                                  onClick={handleImageChange}/></li>
+                            {item.images && item.images.map((image, index) => {
+                                return <li key={index}><img src={image} alt="" width="70" height="70"
+                                                                            className="list-image-item"
+                                                                            onClick={handleImageChange}/></li>
+                            })}
+
                         </ul>
                     </div>
                 </div>
-                <div className="item-description-container grid-element">
+                <div className="item-description-container">
                     <h1 className="display-6">{location.state.details.title}</h1>
                     <div className="price-div">
-                        <p id="item-price">{location.state.details.price}zł</p>
-                        <img src={priceTag} alt="" width="30" height="30" id="price-tag"/>
+                        <p id="item-price">{location.state.details.price}zł<span id="price-tag"><img src={priceTag} alt="" width="25" height="25"/></span></p>
+
                     </div>
                     <p id="item-description">{item.description}</p>
                     </div>
-            <div className="item-form-container grid-element">
+            <div className="item-form-container">
                     <form action="" onSubmit={handleAddItem}>
                         <div className="list-items">
                             {item.options && item.options.map((size, index) => {

@@ -17,7 +17,7 @@ export default function ItemList(props) {
                 setItems(data);
 
             })
-            .catch(error => console.log(error))
+            .catch(error => console.error(error))
     }, [props.details.listName])
 
     return <>
