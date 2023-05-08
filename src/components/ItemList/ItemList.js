@@ -13,9 +13,7 @@ export default function ItemList(props) {
         fetch(url + props.details.listName)
             .then(response => response.json())
             .then(data => {
-                console.log(data);
                 setItems(data);
-
             })
             .catch(error => console.error(error))
     }, [props.details.listName])

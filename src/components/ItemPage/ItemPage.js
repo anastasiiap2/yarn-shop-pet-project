@@ -5,14 +5,13 @@ import priceTag from "../../assets/images/price-tag.svg";
 import "./itemPage.sass";
 import CartMini from "../Cart/CartMini";
 
-export default function ItemPage() {
+export default function ItemPage(props) {
     let location = useLocation();
 
     const [item, setItem] = useState({});
     const [imageSource, setImageSource] = useState(location.state.details.image);
-    const [cart, setCart] = useState([]);
     const [purchase, setPurchase] = useState({
-        name: '',
+        id: null,
         option: '',
         quantity: 1
     });
@@ -20,8 +19,8 @@ export default function ItemPage() {
     const params = useParams();
 
     const handleAddItem = (event) => {
-        event.preventDefault()
-        setCart([...cart, purchase])
+        event.preventDefault();
+        props.onProductAdd(purchase);
     }
 
     useEffect(() => {
@@ -29,25 +28,9 @@ export default function ItemPage() {
             .then(response => response.json())
             .then(data => {
                 setItem(data)
-                setPurchase({...purchase, name: data.title})
+                setPurchase({...purchase, id: data.id})
             })
-        console.log("mount")
     }, [])
-
-    useEffect(() => {
-        fetch("http://127.0.0.1:3000/cart", {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({cart})
-        })
-            .then(response => response.json())
-            .then(data => console.log(data))
-            .catch(err => console.error(err))
-        console.log("cart mount")
-
-    }, [cart])
 
     const handleImageChange = (event) => {
         let source = event.target.getAttribute('src')
@@ -60,7 +43,7 @@ export default function ItemPage() {
     }
 
     const handleQuantitySelect = (event) => {
-        setPurchase({...purchase, quantity: event.target.value})
+        setPurchase({...purchase, quantity: Number.parseInt(event.target.value)})
     }
 
     return <>
