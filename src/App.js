@@ -6,7 +6,8 @@ import Cart from "./components/Cart/Cart";
 import {acrylic, mohair, cotton, silk, wool, merino, polyester, alpaca, knittingNeedles, crochetHooks, auxiliaryTools} from "./components/ItemList/detailsObjects";
 import ItemPage from "./components/ItemPage/ItemPage";
 import Footer from "./components/Footer/Footer";
-import {useState, useEffect} from "react";
+import React, {useState, useEffect} from "react";
+import CartMini from "./components/Cart/CartMini";
 function App() {
   const [cart, setCart] = useState(() => {
     let savedCart = [];
@@ -51,6 +52,40 @@ function App() {
     }
   }
 
+  const findItem = (id, option) => {
+    const array = cart.filter(product => product.id === id)
+    return array.find(product => product.option === option)
+
+  }
+
+  const handleProductDelete = (id, option) => {
+    const result = findItem(id, option);
+    const updatedCart = cart.filter(product => product !== result)
+    setCart(updatedCart)
+  }
+
+  const handleProductDecrement = (id, option) => {
+    const result = findItem(id, option);
+    const updatedCart = cart.map(product => {
+      if(product === result){
+        return {...product, quantity: product.quantity - 1}
+      }
+      return product;
+    })
+    setCart(updatedCart)
+  }
+
+  const handleProductIncrement = (id, option) => {
+    const result = findItem(id, option);
+    const updatedCart = cart.map(product => {
+      if(product === result){
+        return {...product, quantity: product.quantity + 1}
+      }
+      return product;
+    })
+    setCart(updatedCart)
+  }
+
   return <><BrowserRouter>
     <Routes>
       <Route path="/" element={<LandingPage />}/>
@@ -62,12 +97,14 @@ function App() {
       <Route path="/yarn/cotton-yarn" element={<ItemList details={cotton}/>}/>
       <Route path="/yarn/polyester-yarn" element={<ItemList details={polyester}/>}/>
       <Route path="/yarn/alpaca-yarn" element={<ItemList details={alpaca}/>}/>
-      <Route path="/cart" element={<Cart />}/>
+      <Route path="/cart" element={<Cart cart={cart} onProductDelete={handleProductDelete} onProductDecrement={handleProductDecrement} onProductIncrement={handleProductIncrement}/>}/>
       <Route path="/items/:id" element={<ItemPage cart={cart} onProductAdd={handleProductAdd}/>}/>
     </Routes>
+    {/*{location.pathname !== "/cart" && <CartMini cart={cart}/>}*/}
+    <CartMini cart={cart}/>
   </BrowserRouter>
     <Footer/>
-    </>
+  </>
 }
 
 export default App;

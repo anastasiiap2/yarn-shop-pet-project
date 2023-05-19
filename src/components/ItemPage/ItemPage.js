@@ -12,8 +12,11 @@ export default function ItemPage(props) {
     const [imageSource, setImageSource] = useState(location.state.details.image);
     const [purchase, setPurchase] = useState({
         id: null,
+        name: '',
         option: '',
-        quantity: 1
+        price: null,
+        quantity: 1,
+        image: ''
     });
 
     const params = useParams();
@@ -28,7 +31,11 @@ export default function ItemPage(props) {
             .then(response => response.json())
             .then(data => {
                 setItem(data)
-                setPurchase({...purchase, id: data.id})
+                setPurchase({...purchase,
+                    id: data.id,
+                    name: location.state.details.title,
+                    price: location.state.details.price,
+                    image: location.state.details.image})
             })
     }, [])
 
@@ -100,6 +107,5 @@ export default function ItemPage(props) {
                 </div>
             </div>
         </div>
-        <CartMini/>
     </>
 }
